@@ -17,3 +17,6 @@ The course can be broken into the following lectures/labs:
 | Lab 8 | Buildroot |
 | Lab 9 | Embedded Linux software stacks |
 | Lab 10 | Application development and debugging |
+| Lab 11 | Device driver for PL ADCS HIL simulator |
+
+The overarching goal is to build, end-to-end, a custom embedded Linux distribution, while understanding all tools used and the underlying architecture and mechanisms of Linux. The course will culminate in the design and testing of a device driver for the CubeSat ADCS rigid-body dynamics simulator running on the PL side of the SoC.
