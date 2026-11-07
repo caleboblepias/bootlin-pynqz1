@@ -1,5 +1,5 @@
 # bootlin-pynqz1
-Learning embedded Linux through the Bootlin lecture materials. Developing on a PYNQ-Z1 board with a Zynq-7000 SoC. Host machine is an ARM64 Linux UTM VM running Ubuntu. 
+Learning embedded Linux through the [Bootlin lecture materials](https://bootlin.com/doc/training/embedded-linux/embedded-linux-slides.pdf). Developing on a PYNQ-Z1 board with a Zynq-7000 SoC. Host machine is an ARM64 Linux UTM VM running Ubuntu. 
 
 The course can be broken into the following lectures/labs:
 
