@@ -36,6 +36,22 @@ So, we cross-compile. Build mechanisms typically rely on *architecture tuples* t
 1. The architecture name: `arm`, `riscv`, etc
 2. Optionally a vendor name
 3. Operating system name, or `none` when bare-metal
-4. The ABI/C library
+4. The ABI (Application Binary Interface) and C library
 
+This tuple is used to configure/build software, and to differentiate from the native toolchain:
+ - `gcc` -> native compiler
+ - `arm-linux-gnueabihf-gcc` -> cross-compiler
 
+The overall flow for cross-compiling an executable is as follows:
+
+<img width="1373" height="235" alt="image" src="https://github.com/user-attachments/assets/af484396-7828-4d18-ba0c-26e45b10782d" />
+
+#### Binutils
+
+Set of tolls to generate and manipulate binaries for a specific CPU architecture.
+ - `as` assembler
+ - `ld` linker
+ - `ar`, `ranlib` to generate `.a` archives (static libraries)
+ - `objdump`, `readelf`, `size`, `nm`, `strings` to inspect binaries
+ - `objcopy` to modify binaries
+GNU Binutils can be found [https://www.gnu.org/software/binutils/](here)
