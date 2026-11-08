@@ -48,7 +48,7 @@ The overall flow for cross-compiling an executable is as follows:
 
 #### Binutils
 
-Set of tolls to generate and manipulate binaries for a specific CPU architecture.
+Set of tools to generate and manipulate binaries for a specific CPU architecture.
  - `as` assembler
  - `ld` linker
  - `ar`, `ranlib` to generate `.a` archives (static libraries)
