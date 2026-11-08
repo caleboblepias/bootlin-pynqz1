@@ -54,4 +54,4 @@ Set of tolls to generate and manipulate binaries for a specific CPU architecture
  - `ar`, `ranlib` to generate `.a` archives (static libraries)
  - `objdump`, `readelf`, `size`, `nm`, `strings` to inspect binaries
  - `objcopy` to modify binaries
-GNU Binutils can be found [https://www.gnu.org/software/binutils/](here)
+GNU Binutils can be found [here](https://www.gnu.org/software/binutils/)
