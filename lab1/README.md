@@ -55,3 +55,26 @@ Set of tools to generate and manipulate binaries for a specific CPU architecture
  - `objdump`, `readelf`, `size`, `nm`, `strings` to inspect binaries
  - `objcopy` to modify binaries
 GNU Binutils can be found [here](https://www.gnu.org/software/binutils/)
+
+#### C standard library
+
+The C standard library is an essential component, providing an interface between applications and the kernel. `glibc` will be used for this project.
+
+#### Linux vs bare-metal
+
+Bare-metal code includes firmware, bootloaders, kernel code. Linux toolchains include a C standard library, which uses Linux system calls to implement system services. Can be used to build both Linux user-space apps but also bare-metal code. Identified by the `linux` portion of the toolchain tuple. On the other hand, bare-metal toolchains cannot be used to build application code, as they do not include a C standard library that is tied to a particular OS. Identified by `none`.
+
+#### ABI
+
+Application Binary Interface (ABI) needs to be defined. This defines conventions like how function arguments are passed, how the return value is passed, how system calls are made. On ARM 32-bit, two main ABIs are `eabi` and `eablhf`.
+
+### Building a Toolchain
+
+Fairly complex. Typical process:
+1. Build binutils and dependencies
+2. Build a bare-metal, first stage GCC
+3. Extract kernel headers from the Linux source code
+4. Build the C library using the first stage GCC
+5. Build the second stage and final GCC supporting the Linux OS and the C library
+
+Or, get a pre-compiled toolchain. We will use `gcc-arm-linux-gnueabihf` for the Zynq-7020.
