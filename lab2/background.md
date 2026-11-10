@@ -28,6 +28,22 @@ Note: there is a lot of Bootlin content about trusted firmware. This is probably
 3. Stage 2 - U-Boot: Executes from external DDR, inits boot env, loads kernel
 4. Stage 3 - Linux: Executes from external DDR, initializes MMU, drivers, scheduler, memory management, mounts root fs
 
+### U-Boot
+
+Uses configuration system based on `kconfig` from the Linux kernel. `configs/` contains configuration files for supported boards or platforms. U-Boot must be configured before being compiled. 
+
+Although U-Boot is used as a second stage for the Zynq 7020, U-Boot can also support FSBL requirements by providing the Secondary Program Loader (SPL). It is a stripped-down U-Boot. 
+
+#### Device Tree in U-Boot
+
+Device tree is a data structure that describes hardware. Mainly used by Linux initially, but now used by U-Boot, Barebox, etc. File location depends on `CONFIG_OF_UPSTREAM`:
+ - `dts/upstream/src/ARCH/VENDOR` when `CONFIG_OF_UPSTREAM` is set
+ - `arch/ARCH/dts` otherwise
+
+One `.dts` for each board, need to create custom device tree for custom board. More device tree details later!
+
+
+
 
 
 
