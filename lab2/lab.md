@@ -10,4 +10,6 @@ Deliverable is a Xilinx FSBL loaded with the ADCS HIL PL bitstream, as well as t
 5. Generate boot image with Bootgen (`BOOT.BIN`).
 6. Copy onto SD card and boot. Verify PL logic and use U-Boot terminal.
 
+### 2. PL bitstream and hw config
 
+Pulled the `adcs_hil_hw_top.bit` from the old (broken??) x86 64 VM. 
