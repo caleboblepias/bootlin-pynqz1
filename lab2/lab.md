@@ -16,4 +16,6 @@ Cloned  `embeddedsw` repo from Xilinx into `bootlin-pynqz1/lab2`. Relevant files
 
 ### 2. PL bitstream and hw config
 
-Pulled the `adcs_hil_hw_top.bit` from the old (broken??) x86 64 VM. 
+Pulled the `adcs_hil_hw_top.bit` from the old (broken??) x86 64 VM. `ps7_init_gpl.c`/`.h` were pulled from a PYNQ-Z1 repo.
+
+### Build FSBL
