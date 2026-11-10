@@ -42,6 +42,34 @@ Device tree is a data structure that describes hardware. Mainly used by Linux in
 
 One `.dts` for each board, need to create custom device tree for custom board. More device tree details later!
 
+### U-Boot Command Line
+
+#### Help Commands
+ - `help` for all commands
+ - `help <command>` for complete help of one command
+
+#### Info Commands
+ - `version`
+ - `nand info`: NAND flash information
+ - `mmc info`: MMC information
+ - `bdinfo`: board info
+
+#### Environment Commands (Runtime Modification)
+ - `printenv`: shows all vars
+ - `printenv <variable-name>`
+ - `setenv <variable-name> <variable-value`: changes val of a var
+ - `saveenv`: saves current state of environment to storage for persistence
+ - `env`: has many sub-commands
+
+#### Memory Manipulation Commands
+ - `md [.b, .w, .l, .q] address [# of objects]`: memory display
+ - `mw [.b, .w, .l, .q] address value [count]`: memory write
+ - `mm [.b, .w, .l, .q] address`: memory modify (interactively write starting from address)
+
+There are many more U-Boot command sets and capabilities. Read the [docs](https://docs.u-boot.org/en/latest/usage/index.html) for all of them.
+
+
+
 
 
 
