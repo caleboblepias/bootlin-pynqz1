@@ -19,3 +19,5 @@ Cloned  `embeddedsw` repo from Xilinx into `bootlin-pynqz1/lab2`. Relevant files
 Pulled the `adcs_hil_hw_top.bit` from the old (broken??) x86 64 VM. `ps7_init_gpl.c`/`.h` were pulled from a PYNQ-Z1 repo.
 
 ### Build FSBL
+
+After spending some time looking into manually building the FSBL using the files collected so far, it makes more sense to just use the working U-Boot SPL + U-boot proper (second stage) image from the [FPGA-SoC-U-Boot-PYNQ-Z1](https://github.com/ikwzm/FPGA-SoC-U-Boot-PYNQ-Z1) repo. Going to scrub the Xilinx FSBL approach and use the U-Boot command line to set up a script to load the bitstream (and Linux) that way.
