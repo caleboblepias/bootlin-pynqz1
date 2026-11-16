@@ -36,4 +36,10 @@ After spending some time looking into manually building the FSBL using the files
 
 `SRST` button performs a power cycle and U-Boot runs.
 
+### 4, 5, 6
+
+This steps were covered via the repo linked in step 3. The remaining step is to load the PL bitstream in the correct location.
+
+
+
 
