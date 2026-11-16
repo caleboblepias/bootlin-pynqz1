@@ -38,7 +38,17 @@ After spending some time looking into manually building the FSBL using the files
 
 ### 4, 5, 6
 
-This steps were covered via the repo linked in step 3. The remaining step is to load the PL bitstream in the correct location.
+This steps were covered via the repo linked in step 3. The remaining step is to load the PL bitstream in the correct location. The following shows the approximate SD allocation to on-chip RAM and DDR:
+
+<img width="1663" height="602" alt="image" src="https://github.com/user-attachments/assets/13f05237-5eee-4843-85ba-d913afbfc6f8" />
+
+This information can be found in the following U-Boot command line responses:
+
+<img width="383" height="602" alt="image" src="https://github.com/user-attachments/assets/c2cab2ac-f4a2-4884-a3e7-ab4755ef95f1" />
+
+
+
+
 
 
 
