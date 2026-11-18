@@ -1,6 +1,6 @@
 # lab2
 
-Deliverable is a Xilinx FSBL loaded with the ADCS HIL PL bitstream, as well as the U-Boot second stage. Be able to access the FSBL debug output and U-Boot command line. This will be booted from SD.
+Deliverable is a Xilinx FSBL loaded with the ADCS HIL PL bitstream, as well as the U-Boot second stage (this has since been updated to a U-Boot SPL + proper instead). Be able to access the FSBL debug output and U-Boot command line. This will be booted from SD.
 
 ### Procedure
 1. Acquire the FSBL from Xilinx.
@@ -18,6 +18,38 @@ Cloned  `embeddedsw` repo from Xilinx into `bootlin-pynqz1/lab2`. Relevant files
 
 Pulled the `adcs_hil_hw_top.bit` from the old (broken??) x86 64 VM. `ps7_init_gpl.c`/`.h` were pulled from a PYNQ-Z1 repo.
 
-### Build FSBL
+### 3. Build FSBL
 
 After spending some time looking into manually building the FSBL using the files collected so far, it makes more sense to just use the working U-Boot SPL + U-boot proper (second stage) image from the [FPGA-SoC-U-Boot-PYNQ-Z1](https://github.com/ikwzm/FPGA-SoC-U-Boot-PYNQ-Z1) repo. Going to scrub the Xilinx FSBL approach and use the U-Boot command line to set up a script to load the bitstream (and Linux) that way.
+
+ - Searching for the correct usb device for serial debug (Mac):
+`ls /dev/cu.*`
+
+ - Setting up serial debug:
+`screen /dev/cu.usbserial-XXXXXXXX 115200`
+
+ - In this case:
+`screen /dev/cu.usbserial-003017B844F91 115200`
+
+ - To exit:
+`Ctrl-A`, `K`, `Y`
+
+`SRST` button performs a power cycle and U-Boot runs.
+
+### 4, 5, 6
+
+These steps were covered via the repo linked in step 3. The remaining step is to load the PL bitstream in the correct location. The following shows the approximate SD allocation to on-chip RAM and DDR:
+
+<img width="1663" height="602" alt="image" src="https://github.com/user-attachments/assets/13f05237-5eee-4843-85ba-d913afbfc6f8" />
+
+This information can be found in the following U-Boot command line responses:
+
+<img width="383" height="602" alt="image" src="https://github.com/user-attachments/assets/c2cab2ac-f4a2-4884-a3e7-ab4755ef95f1" />
+
+
+
+
+
+
+
+
